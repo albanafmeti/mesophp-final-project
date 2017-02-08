@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="17019b0a-97d7-4bd5-adea-55576a816db6" name="mesophp.techalin.com" url="http://mesophp.techalin.com">
+        <fileTransfer host="mesophp.techalin.com" port="21" rootFolder="/web" password="dfc7dfcfdfd9dfc5dfdadfc2dfda" username="afmeti_mesophp">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
