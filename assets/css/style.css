@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,600,600i,700,700i');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #eee4db;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+header {
+    background-color: #860000;
+    padding: 20px 0;
+}
+
+.menu {
+    background-color: #860000;
+    box-shadow: 0 0 10px 0 black;
+    position: absolute;
+    width: 100%;
+}
+
+.navbar-default {
+    background-color: #860000;
+    border-color: #860000;
+    margin: 0;
+    z-index: 10;
+    min-height: 20px;
+}
+
+.navbar-default .search-input {
+    border-radius: 0;
+    line-height: 23px;
+    font-size: 13px;
+    text-align: right;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    font-size: 13px;
+    padding: 13px;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+#content {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.main-image img {
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding: 5px;
+}
+
+.side-options ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.side-options ul li {
+    padding: 10px;
+    background-color: #909090;
+    margin-top: 10px;
+    border: 1px solid #870000;
+}
+
+.side-options ul li a, .side-options ul li a:hover {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.news-row .border {
+    margin-top: 10px;
+    border-top: 3px solid #860000;
+}
+
+.news-item {
+    margin-bottom: 25px;
+}
+
+.news-item h3.news-title {
+    font-size: 15px;
+    color: #860000;
+    font-weight: 600;
+}
+
+.news-item p.news-content a {
+    font-size: 13px;
+}
+
+.news-item p.news-content a:hover {
+    text-decoration: none
+}
+
+footer p.copyright {
+    text-align: center;
+    border-top: 5px solid #860000;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #860000;
+}
+
+h5.side-arkiva {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #860000;
+}
+
+
+.left-content {
+    background-color: #eee4db;
+}
+
+ul.dropdown-menu {
+    padding: 0;
+    border: 1px solid red;
+}
+
+ul.dropdown-menu > li > a {
+    background-color: #860000;
+    border-bottom: 1px solid #000;
+    color: #fff;
+}
+
+/* Pages CSS */
+
+ul.pages-left {
+    margin: 0;
+    padding: 0;
+}
+
+ul.pages-left li {
+    padding: 3px;
+    background-color: #860000;
+    border: 1px solid #000;
+    margin: 5px 5px;
+    text-align: center;
+}
+
+ul.pages-left li.active {
+    background-color: #eee4db;
+}
+
+ul.pages-left li.active a {
+    color: #860000;
+}
+
+ul.pages-left li a {
+    font-size: 12px;
+    color: #fff;
+}
+
+.pg-content {
+    background-color: #eee4db;
+}
+
+.pg-description {
+    padding: 15px;
+    text-align: left;
+}
+
+.pg-content .pg-title {
+    margin: 10px 15px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #860000;
+    background-color: #a6a6a6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Kontakt */
+
+fieldset.kontakt legend {
+    width: auto;
+    padding: 2px;
+    margin: 0;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+fieldset.kontakt {
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+fieldset.kontakt span {
+    font-size: 10px;
+}
+
+
+/* Login Form*/
+
+.login-block {
+    width: 320px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #860000;
+    margin: 0 auto;
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input#email {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#email:focus {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password:focus {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #860000;
+}
+
+.login-block button {
+    width: 100%;
+    height: 40px;
+    background: #860000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #860000;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-block button:hover {
+    background: #860000;
+}
+
+
+
+
+@media (min-width: 992px) {
+    .no-pd-left {
+        padding-left: 0 !important;
+    }
+
+    .no-pd-right {
+        padding-right: 0 !important;
+    }
+
+    .no-pd {
+        padding: 0 !important;
+    }
+
+    /* Submenu On Hover*/
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    /* -- Submenu On Hover -- */
+}
+
+@media (max-width: 1200px) {
+    #content {
+        margin-top: 87px !important;
+    }
+
+    form.navbar-form {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    #content {
+        margin-top: 82px;
+    }
+
+    .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        font-size: 10px;
+        padding: 7px;
+    }
+
+    .top-lang ul.menu li a, .top-lang ul.menu li a:hover {
+        font-size: 10px;
+    }
+
+    .top-menu ul.menu li a, .top-menu ul.menu li a:hover {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .top-menu, .top-lang {
+        background-color: transparent;
+        position: static;
+    }
+
+    .top-lang ul.menu li a, .top-lang ul.menu li a:hover {
+        color: #fff;
+        border-bottom: 1px solid white;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        color: #fff;
+        font-size: 10px;
+    }
+}
