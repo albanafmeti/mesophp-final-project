@@ -1,6 +1,7 @@
 <?php
 
 require_once "Database.php";
+
 class BaseModel {
 
     protected $db;

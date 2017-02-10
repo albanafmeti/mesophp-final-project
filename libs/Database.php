@@ -6,8 +6,8 @@ class Database {
 
     function __construct() {
 
-        $host = "mesophp.techalin.com";    //ose thjesht: localhost
-        $user = "afmeti_mesophp";
+        $host = "127.0.0.1";    //ose thjesht: localhost
+        $user = "c1_mesophp";
         $password = "mesophp";         //Supozojme qe nuk kemi password per userin root
         $db_name = "mesophp_db";
 

@@ -71,6 +71,10 @@ header {
     border: 1px solid #870000;
 }
 
+.side-options ul li.active {
+    background-color: #860000;
+}
+
 .side-options ul li a, .side-options ul li a:hover {
     color: #fff;
     text-align: center;
@@ -117,20 +121,8 @@ h5.side-arkiva {
     border-bottom: 2px solid #860000;
 }
 
-
 .left-content {
     background-color: #eee4db;
-}
-
-ul.dropdown-menu {
-    padding: 0;
-    border: 1px solid red;
-}
-
-ul.dropdown-menu > li > a {
-    background-color: #860000;
-    border-bottom: 1px solid #000;
-    color: #fff;
 }
 
 /* Pages CSS */
@@ -201,7 +193,6 @@ fieldset.kontakt {
 fieldset.kontakt span {
     font-size: 10px;
 }
-
 
 /* Login Form*/
 
@@ -277,9 +268,6 @@ fieldset.kontakt span {
 .login-block button:hover {
     background: #860000;
 }
-
-
-
 
 @media (min-width: 992px) {
     .no-pd-left {

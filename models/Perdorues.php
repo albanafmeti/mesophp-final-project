@@ -1,6 +1,6 @@
 <?php
-//Importimi i skedareve te nevojshem:
-require_once '../libs/BaseModel.php';
+
+require_once WEBROOT . 'libs/BaseModel.php';
 
 class Perdorues extends BaseModel
 {
@@ -98,7 +98,7 @@ class Perdorues extends BaseModel
         }
     }
 
-    public static function getList(string $condition)
+    public static function getList(string $condition = "1")
     {
 
         $sql = "SELECT * FROM perdoruesit WHERE $condition";

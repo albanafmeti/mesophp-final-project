@@ -1,8 +1,8 @@
 <?php
-//Importimi i skedareve te nevojshem:
-require_once 'libs/BaseModel.php';
 
-class Artikull extends BaseModel
+require_once WEBROOT . 'libs/BaseModel.php';
+
+class Njoftim extends BaseModel
 {
 
     private $id;
@@ -12,14 +12,14 @@ class Artikull extends BaseModel
     public $id_departament;
 
 
-    function __construct(array $artik = [])
+    function __construct(array $njoft = [])
     {
         parent::__construct();
 
-        $this->titulli = isset($artik['titulli']) ? $artik['titulli'] : null;
-        $this->pershkrimi = isset($artik['pershkrimi']) ? $artik['pershkrimi'] : null;
-        $this->data = isset($artik['data']) ? $artik['data'] : null;
-        $this->id_departament = isset($artik['id_departament']) ? $artik['id_departament'] : null;
+        $this->titulli = isset($njoft['titulli']) ? $njoft['titulli'] : null;
+        $this->pershkrimi = isset($njoft['pershkrimi']) ? $njoft['pershkrimi'] : null;
+        $this->data = isset($njoft['data']) ? $njoft['data'] : null;
+        $this->id_departament = isset($njoft['id_departament']) ? $njoft['id_departament'] : null;
     }
 
     public function getId()
@@ -32,7 +32,7 @@ class Artikull extends BaseModel
 
         if (is_null($this->id)) {
 
-            $new_id = $this->db->insert("artikujt", [
+            $new_id = $this->db->insert("njoftimet", [
 
                 "titulli" => $this->titulli,
                 "pershkrimi" => $this->pershkrimi,
@@ -45,7 +45,7 @@ class Artikull extends BaseModel
 
         } else {
 
-            $rezultati = $this->db->update("artikujt", [
+            $rezultati = $this->db->update("njoftimet", [
 
                 "titulli" => $this->titulli,
                 "pershkrimi" => $this->pershkrimi,
@@ -61,14 +61,14 @@ class Artikull extends BaseModel
 
     public function delete()
     {
-        $rezultati = $this->db->delete("artikujt", "id = {$this->id}");
+        $rezultati = $this->db->delete("njoftimet", "id = {$this->id}");
         return $rezultati;
     }
 
     public static function getById(int $id)
     {
 
-        $sql = "SELECT * FROM artikujt WHERE id = :id";
+        $sql = "SELECT * FROM njoftimet WHERE id = :id";
 
         $db = new Database();
 
@@ -80,14 +80,14 @@ class Artikull extends BaseModel
 
             // Nese ekziston rekord me kete id, krijojme nje objekt perfaqesues per te
 
-            $artikull = new Artikull();
-            $artikull->id = $rekord[0]["id"];
-            $artikull->titulli = $rekord[0]["titulli"];
-            $artikull->pershkrimi = $rekord[0]["pershkrimi"];
-            $artikull->data = $rekord[0]["data"];
-            $artikull->id_departament = $rekord[0]["id_departament"];
+            $njoftim = new Njoftim();
+            $njoftim->id = $rekord[0]["id"];
+            $njoftim->titulli = $rekord[0]["titulli"];
+            $njoftim->pershkrimi = $rekord[0]["pershkrimi"];
+            $njoftim->data = $rekord[0]["data"];
+            $njoftim->id_departament = $rekord[0]["id_departament"];
 
-            return $artikull;
+            return $njoftim;
 
         } else {
             return null;
@@ -97,7 +97,7 @@ class Artikull extends BaseModel
     public static function getList(string $condition = "1")
     {
 
-        $sql = "SELECT * FROM artikujt WHERE $condition";
+        $sql = "SELECT * FROM njoftimet WHERE $condition";
 
         $db = new Database();
 
@@ -105,7 +105,7 @@ class Artikull extends BaseModel
 
         // $rekordet eshte nje array me listen e rekordeve qe u kthye
 
-        $artikujt = []; //Ky array do te mbaje listen e objekteve te tipit `Artikull`
+        $njoftimet = []; //Ky array do te mbaje listen e objekteve te tipit `Artikull`
 
 
         if (count($rekordet)) {
@@ -114,21 +114,21 @@ class Artikull extends BaseModel
             foreach ($rekordet as $rekord) {
                 //Per cdo rekord te kthyer nga databaza krijojme nje objekt:
 
-                $artikull = new Artikull();
-                $artikull->id = $rekord["id"];
-                $artikull->titulli = $rekord["titulli"];
-                $artikull->pershkrimi = $rekord["pershkrimi"];
-                $artikull->data = $rekord["data"];
-                $artikull->id_departament = $rekord["id_departament"];
+                $njoftim = new Njoftim();
+                $njoftim->id = $rekord["id"];
+                $njoftim->titulli = $rekord["titulli"];
+                $njoftim->pershkrimi = $rekord["pershkrimi"];
+                $njoftim->data = $rekord["data"];
+                $njoftim->id_departament = $rekord["id_departament"];
 
                 // E shtojme objektin e krijuar ne array-n kryesor:
 
-                array_push($artikujt, $artikull);
+                array_push($njoftimet, $njoftim);
             }
 
             //Kthejme listen e objekteve te tipit `Artikull`:
 
-            return $artikujt;
+            return $njoftimet;
 
         } else {
             return array();
