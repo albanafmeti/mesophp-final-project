@@ -11,7 +11,7 @@ include "header.php"
                 <div class="col-sm-12 left-content">
 
                     <div class="col-md-8 col-md-offset-2">
-                        <form role="form" id="contact">
+                        <form role="form" id="contact" method="POST">
 
 
                             <fieldset class="kontakt">
