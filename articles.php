@@ -1,15 +1,6 @@
 <?php
 require_once "config.php";
-show_reporting();
-require_once "libs/AuthUser.php";
-require_once WEBROOT . "models/Departament.php";
-require_once WEBROOT . "models/Njoftim.php";
 require_once WEBROOT . "models/Artikull.php";
-
-$departamentet = Departament::getList();
-
-$id_departament = "";
-$kushti = "1 LIMIT 4";
 
 if (isset($_POST["kerko"])) {
     $kerkesa = $_POST["kerkesa"];
@@ -18,7 +9,7 @@ if (isset($_POST["kerko"])) {
     header("Location: /index.php");
 }
 
-include "header.php"
+include "header.php";
 
 ?>
 
@@ -54,6 +45,6 @@ include "header.php"
 
 <?php
 
-include "footer.php"
+include "footer.php";
 
 ?>
