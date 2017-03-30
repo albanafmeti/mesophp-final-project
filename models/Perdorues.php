@@ -28,6 +28,11 @@ class Perdorues extends BaseModel
         return $this->id;
     }
 
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     public function save()
     {
 
@@ -139,6 +144,25 @@ class Perdorues extends BaseModel
         } else {
             return array();
         }
+    }
+
+    public function toArray() {
+        $perdorues = [];
+        $perdorues["id"] = $this->id;
+        $perdorues["emri"] = $this->emri;
+        $perdorues["email"] = $this->email;
+        $perdorues["password"] = $this->password;
+        $perdorues["tipi"] = $this->tipi;
+        $perdorues["id_departament"] = $this->id_departament;
+        return $perdorues;
+    }
+
+    public function isAdmin()
+    {
+        if ($this->tipi == 0) {
+            return true;
+        }
+        return false;
     }
 
 }

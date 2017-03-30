@@ -3,6 +3,7 @@ require_once "config.php";
 require_once "models/Departament.php";
 require_once "models/Njoftim.php";
 require_once "models/Artikull.php";
+require_once "libs/AuthUser.php";
 
 $departamentet = Departament::getList();
 

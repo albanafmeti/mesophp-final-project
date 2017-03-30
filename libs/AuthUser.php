@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/Perdorues.php";
+require_once WEBROOT . "models/Perdorues.php";
 
 class AuthUser
 {
@@ -26,21 +26,22 @@ class AuthUser
                 "id_departament" => $rezultati[0]["id_departament"],
             ]);
 
+            $perdorues->setId($rezultati[0]["id"]);
+
             return $perdorues;
         } else {
             return false;
         }
     }
 
-    public static function save(Perdorues $perdorues)
+    public static function save(Array $perdorues)
     {
-        Session::set("auth", $perdorues);
+        Session::set("user_auth", $perdorues);
     }
 
     public static function is_logged()
     {
-
-        if (is_null(Session::get("auth"))) {
+        if (is_null(self::get())) {
             return false;
         } else {
             return true;
@@ -50,11 +51,11 @@ class AuthUser
 
     public static function logout()
     {
-        Session::clear("auth");
+        Session::clear("user_auth");
     }
 
-    public function get()
+    public static function get()
     {
-        return Session::get("auth");
+        return Session::get("user_auth");
     }
 }

@@ -31,7 +31,6 @@ class Database {
         $fushat = implode(',', array_keys($field_values));
 
         $parametrat = ':' . implode(', :', array_keys($field_values));
-
         $stmt = $this->connection->prepare("INSERT INTO $table ($fushat) VALUES ($parametrat);");
 
         foreach ($field_values as $key => $value) {

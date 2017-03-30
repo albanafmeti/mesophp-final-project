@@ -52,17 +52,21 @@
 
                             <form method="post" action="/articles.php" class="navbar-form navbar-right">
                                 <div class="input-group">
-                                    <input type="text" class="form-control search-input input-sm"
+                                    <input type="text" class="form-control search-input input-sm" name="kerkesa"
                                            placeholder="Kerko">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-default btn-sm"><i class="fa fa-search"></i>
+                                        <button class="btn btn-default btn-sm" type="submit" name="kerko"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
                                 </div>
                             </form>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/login.php">HYR</a></li>
+                                <?php if (AuthUser::is_logged()) { ?>
+                                    <li><a href="/admin/logout.php">DIL</a></li>
+                                <?php } else { ?>
+                                    <li><a href="/login.php">HYR</a></li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

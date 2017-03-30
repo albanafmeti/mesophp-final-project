@@ -1,5 +1,22 @@
 <?php
 
+require_once "config.php";
+require_once "../libs/AuthUser.php";
+require_once "../models/Artikull.php";
+require_once "../models/Perdorues.php";
+
+if (!AuthUser::is_logged()) {
+    header("Location: /login.php");
+}
+
+$user_logged = Perdorues::getById(AuthUser::get()["id"]);
+
+if ($user_logged->isAdmin()) {
+    $artikujt = Artikull::getList();
+} else {
+    $artikujt = Artikull::getList("id_departament = {$user_logged->id_departament}");
+}
+
 include "../header.php"
 
 ?>
@@ -22,7 +39,34 @@ include "../header.php"
                     </h3>
 
                     <div class="pg-description">
-
+                        <div class="pg-description">
+                            <table class="table table-stripped">
+                                <thead>
+                                <tr>
+                                    <th>Titulli</th>
+                                    <th>Pershkrimi</th>
+                                    <th>Data</th>
+                                    <th>Veprimi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <? foreach ($artikujt as $artikull) { ?>
+                                    <tr>
+                                        <td><?= $artikull->titulli ?></td>
+                                        <td><?= $artikull->pershkrimi ?></td>
+                                        <td><?= $artikull->data ?></td>
+                                        <td>
+                                            <a class="btn btn-info"
+                                               href="/admin/article_edit.php?id=<?= $artikull->getId(); ?>"><i
+                                                        class="fa fa-pencil"></i></a>
+                                            <a class="btn btn-danger"
+                                               href="/admin/article_delete.php?id=<?= $artikull->getId(); ?>"><i
+                                                        class="fa fa-times"></i></a>
+                                        </td>
+                                    </tr>
+                                <? } ?>
+                                </tbody>
+                            </table>
                     </div>
                 </div>
             </div>

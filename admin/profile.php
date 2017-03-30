@@ -1,6 +1,14 @@
 <?php
+session_start();
 
-include "../header.php"
+require_once "config.php";
+require_once WEBROOT . "libs/AuthUser.php";
+
+if (!AuthUser::is_logged()) {
+    header("Location: /login.php");
+}
+
+include WEBROOT . "header.php"
 
 ?>
 
@@ -23,8 +31,14 @@ include "../header.php"
 
                         <h3 class="text-center">Mire se Erdhe</h3>
                         <hr style="border-color: #860000">
-                        <h3 class="text-center"><strong>Alban Afmeti</strong></h3>
-
+                        <h3 class="text-center">
+                            <strong>
+                                <?php
+                                $logged_user = AuthUser::get();
+                                echo $logged_user["emri"];
+                                ?>
+                            </strong>
+                        </h3>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
-//Importimi i skedareve te nevojshem:
-require_once 'libs/BaseModel.php';
+
+require_once WEBROOT . 'libs/BaseModel.php';
 
 class Artikull extends BaseModel
 {
