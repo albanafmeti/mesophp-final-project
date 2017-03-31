@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require_once "config.php";
 require_once WEBROOT . "libs/AuthUser.php";
 
@@ -47,6 +45,6 @@ include WEBROOT . "header.php"
 
 <?php
 
-include "../footer.php"
+include WEBROOT . "footer.php"
 
 ?>

@@ -1,6 +1,7 @@
 <?php
 require_once "config.php";
-require_once WEBROOT . "models/Artikull.php";
+require_once  "libs/AuthUser.php";
+require_once  "models/Artikull.php";
 
 if (isset($_POST["kerko"])) {
     $kerkesa = $_POST["kerkesa"];

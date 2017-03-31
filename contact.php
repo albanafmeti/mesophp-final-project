@@ -1,6 +1,5 @@
 <?php
 require_once "config.php";
-show_reporting();
 require_once "libs/AuthUser.php";
 
 include "header.php"

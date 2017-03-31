@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
-require_once "../libs/AuthUser.php";
-require_once "../models/Njoftim.php";
+require_once WEBROOT . "libs/AuthUser.php";
+require_once WEBROOT . "models/Njoftim.php";
 
 if (!AuthUser::is_logged()) {
     header("Location: /login.php");
@@ -34,7 +34,7 @@ if (isset($_POST['ruaj'])) {
     }
 }
 
-include "../header.php"
+include WEBROOT . "header.php"
 
 ?>
 
@@ -81,6 +81,6 @@ include "../header.php"
 
 <?php
 
-include "../footer.php"
+include WEBROOT . "footer.php"
 
 ?>

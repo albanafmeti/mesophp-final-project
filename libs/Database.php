@@ -6,16 +6,16 @@ class Database {
 
     function __construct() {
 
-        $host = "127.0.0.1";    //ose thjesht: localhost
+        $host = "127.0.0.1";   //ose thjesht: localhost
         $user = "c1_mesophp";
-        $password = "mesophp";         //Supozojme qe nuk kemi password per userin root
+        $password = "mesophp";
         $db_name = "mesophp_db";
 
         try {
 
             $this->connection = new PDO("mysql:host=$host;dbname=$db_name", $user, $password);
 
-            // Vendosim metoden sesi PDO-ja do te gjeneroje gabimet - ne forme Exception:
+            // Vendosim metoden sesi PDO-ja do te gjeneroje gabimet - ne form Exception:
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch(PDOException $ex) {
@@ -104,5 +104,4 @@ class Database {
         return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
 
     }
-
 }

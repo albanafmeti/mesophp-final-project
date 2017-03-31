@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
-require_once "../libs/AuthUser.php";
-require_once "../models/Artikull.php";
+require_once WEBROOT . "libs/AuthUser.php";
+require_once WEBROOT . "models/Artikull.php";
 
 if (!AuthUser::is_logged()) {
     header("Location: /login.php");
